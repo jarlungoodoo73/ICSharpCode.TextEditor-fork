@@ -6,6 +6,7 @@
 // </file>
 
 using System.Collections.Generic;
+using System.Globalization;
 using System.Xml;
 
 namespace ICSharpCode.TextEditor.Document
@@ -28,7 +29,7 @@ namespace ICSharpCode.TextEditor.Document
         public BookmarkManagerMemento(XmlElement element)
         {
             foreach (XmlElement el in element.ChildNodes)
-                Bookmarks.Add(int.Parse(el.Attributes["line"].InnerText));
+                Bookmarks.Add(int.Parse(el.Attributes["line"].InnerText, CultureInfo.InvariantCulture));
         }
 
         /// <summary>

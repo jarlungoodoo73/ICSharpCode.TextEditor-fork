@@ -7,6 +7,7 @@
 
 using System;
 using System.Drawing;
+using System.Globalization;
 
 namespace ICSharpCode.TextEditor.Document
 {
@@ -83,7 +84,7 @@ namespace ICSharpCode.TextEditor.Document
         public static Font ParseFont(string font)
         {
             var descr = font.Split(',', '=');
-            return new Font(descr[1], float.Parse(descr[3]));
+            return new Font(descr[1], float.Parse(descr[3], CultureInfo.InvariantCulture));
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -169,7 +170,7 @@ namespace ICSharpCode.TextEditor
         private static Font ParseFont(string font)
         {
             var descr = font.Split(',', '=');
-            return new Font(descr[1], float.Parse(descr[3]));
+            return new Font(descr[1], float.Parse(descr[3], CultureInfo.InvariantCulture));
         }
 
         protected virtual void OnReloadHighlighting(object sender, EventArgs e)

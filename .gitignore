@@ -7,3 +7,4 @@ TestResults/
 *.vsp
 /.vs/
 /.idea/
+.nuget/

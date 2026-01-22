@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 
 namespace ICSharpCode.TextEditor.Document
@@ -279,8 +280,8 @@ namespace ICSharpCode.TextEditor.Document
                 var lines = str.Split('\n');
                 for (var i = 0; i < lines.Length && lines[i].Length > 0; i += 4)
                 {
-                    var offset = int.Parse(lines[i]);
-                    var length = int.Parse(lines[i + 1]);
+                    var offset = int.Parse(lines[i], CultureInfo.InvariantCulture);
+                    var length = int.Parse(lines[i + 1], CultureInfo.InvariantCulture);
                     var text = lines[i + 2];
                     var isFolded = bool.Parse(lines[i + 3]);
                     var found = false;
